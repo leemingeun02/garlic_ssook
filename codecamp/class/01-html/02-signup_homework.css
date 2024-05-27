@@ -1,0 +1,11 @@
+.gray_background{
+    width:1920px;
+    height:1080px;
+    display: flex;
+    flex-direction:column;
+    border: 1px red;
+}
+
+.title_text{
+    
+}
