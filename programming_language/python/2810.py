@@ -1,21 +1,15 @@
 N = int(input())
-string = input()
-i = 0
-seat_and_holder = '*'
 
-while (i<N):
-    if string[i] == 'S':
-        seat_and_holder += 'S*'
-        i += 1
-    elif string[i] == 'L':
-        seat_and_holder += 'LL*'
-        i += 2 ######여기까지맞음
+seats = input()
+seats2 = seats
+seats = seats.replace("S", "*S")
+seats = seats.replace("LL", "*LL") + "*"
 
-counter = 0
+seats = seats.replace("*LL*", "")
+seats = seats.replace("*L", "")
+seats = seats.replace("L*", "")
+seats = seats.replace("*S", "")
+seats = seats.replace("S*", "")
+seats = seats.replace("*", "")
 
-final = list(seat_and_holder)
-final.pop()
-final.pop()
-answer = 2
-
-while final.index("*") != ValueError:
+print(len(seats2) - len(seats))
