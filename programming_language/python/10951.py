@@ -1,5 +1,6 @@
 import sys
+input = sys.stdin.readline
 
 while True:
-    a, b = map(int, sys.stdin.readline().split())
-    print(a+b)
+    A, B = map(int, input().split(" "))
+    print(A+B)
