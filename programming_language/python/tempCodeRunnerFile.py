@@ -1,1 +1,1 @@
-print(string)
+    print(a, b)
