@@ -1,22 +1,12 @@
-A,B,C,X,Y = map(int, input().split(" "))
+A, B, C, X, Y = map(int, input().split(" "))
 
-# 반반 필요없는 경우
-if 2 * C  >= A + B:
-        print(A*X + B*Y)
+반반이 제일싸면 반반만 후라이드 양념 중에 더 많은거 만큼 산다
+반반 2개가 a랑 b 합친거보다 싸면 반반 + 후라이드만 사거나 반반 + 양념만 산다
+반반이 제일 비싸면 후라이드 양념만 개수만큼 산다
 
-# 반반만 사야하는경우
-elif A>2*C and B> 2*C:
-    if X > Y:
-        print(C*2*X)
-    else:
-        print(C*2*Y)
-    
-# 반반도 사야하는경우
-else:
-    if 2 * C < A+B and (C < A and C < B):
-        if X >= Y:
-            print(C*2*Y + A*(X-Y))
-        else:
-            print(C*2*X + B*(Y-X))
-    else:
-        pass
+if C < A and C < B:
+    print((X > Y ? X : Y) * 2 * C)
+elif 2 * C < A + B:
+    print()
+elif C > A and C > B:
+    print(A * X + B * Y)
