@@ -1,8 +1,10 @@
-A, B, V = map(int, input().split())
+A, B, V = map(int, input().split(" "))
 
-answer = V // (A-B) #몫
-
-if (V <= (answer-1) * (A - B) + A):
-    print(answer)
-elif  (V <= (answer) * (A - B) + A):
-    print(answer+1)
+answer = (V-B) // (A-B) - 1
+if (V - (A-B)*answer) == 0:
+    pass
+elif (V - (A-B)*answer) - A <= 0:
+    answer += 1
+elif (V - (A-B)*answer) - (2*A - B) <= 0:
+    answer += 2
+print(answer)
