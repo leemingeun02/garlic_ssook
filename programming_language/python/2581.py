@@ -12,6 +12,7 @@ for i in range(N, M+1):
         continue
     if i == 2:
         smallest = 2
+        sum += i
         continue
     for j in range(2, i): #i가 소수인지 판별하기 위한반복문, i는 2부터 판정가능함.
         if i % j == 0: #나누어떨어지는 소인수가 존재할 때, 즉 소수가 아닐때
@@ -25,4 +26,3 @@ if smallest == -1:
 else:
     print(sum)
     print(smallest)
-
