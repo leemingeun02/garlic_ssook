@@ -1,4 +1,4 @@
-a = []
+writing = [input() for i in range(5)]
 
-if not a:
-    print(123)
+if writing[j][i]:
+    print(writing[j][i], end="")
