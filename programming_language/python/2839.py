@@ -10,3 +10,4 @@ if result:
     print(min(result))
 else:
     print(-1)
+    
