@@ -18,7 +18,6 @@ for i in range(3, N, 2):
     if is_prime[i]:
         prime_list.append(i)
 
-print(prime_list)
 
 
 
