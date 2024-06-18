@@ -29,6 +29,8 @@ for i in range(len(gap)-1):
     if max_gap < asdf:
         max_gap = asdf
 
+if max_gap = 0z
+
 #답 구하기
 total_garosu_number = (garosu[-1] - garosu[0])//max_gap + 1
 
