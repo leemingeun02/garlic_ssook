@@ -1,20 +1,21 @@
-def max_common(a, b):
-    while True:
-        if max(a,b) % min(a, b) == 0:
-            return min(a, b)
-        else: r = max(a,b) % min(a,b)
-        if a > b:
-            a = r
-        else:
-            b = r
+import sys
+input = sys.stdin.readline
 
-son1, parent1 = map(int, input().split())
-son2, parent2 = map(int, input().split())
+M, N = map(int, input().split())
 
-B = parent1 * parent2
-A = son1 * parent2 + son2 * parent1
-maxcom = max_common(A, B)
-B = B / maxcom
-A = A / maxcom
 
-print(int(A), int(B))
+
+racket = [1] * 1000001
+racket[0] = 0
+racket[1] = 0
+for i in range(4, 1000001, 2):
+    racket[i] = 0
+
+for i in range(3, 1000001, 2):
+    if racket[i] == 1:
+        for j in range(i*2, 1000001, i):
+            racket[j] = 0
+
+for i in range(M, N+1):
+    if racket[i] == 1:
+        print(i)

@@ -23,13 +23,14 @@ for i in range(N-1):
 gap = sorted(list(gap))
 
 #최대 간격 구하기
-max_gap = 0
+max_gap = 100000000000000
 for i in range(len(gap)-1):
     asdf = euclide(gap[i+1], gap[i])
-    if max_gap < asdf:
+    if max_gap > asdf:
         max_gap = asdf
 
-if max_gap = 0z
+if max_gap == 100000000000000:
+    max_gap = gap[0]
 
 #답 구하기
 total_garosu_number = (garosu[-1] - garosu[0])//max_gap + 1
