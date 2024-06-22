@@ -1,2 +1,6 @@
-big o ㅛㅍ기법을 사용한다. 시간복잡도는 엄밀한 정의는 아니지만 빅오 ㅍ기법을 간단히 정의하ㅏ면
-가장 빠르게 ㅈㅇ가하는 항만을 고ㅕ하는표기법읻. 다시 말해 ㅏㅁ수의 상한만을 나타낸다.
+
+def recursive_function():
+    print("재귀재귀")
+    recursive_function()
+
+recursive_function()
