@@ -1,15 +1,3 @@
-import sys
-input = sys.stdin.readline
+extracted = [0,0] #12번째줄때메 0,0그냥넣엇음아무의미없음
 
-N = int(input())
-
-member = {}
-
-
-for _ in range(N):
-    name, att = input().rstrip().split()
-    member[name] = att
-
-for key in sorted(member, reverse=True):
-    if member[key] == "enter":
-        print(key)
+print(extracted)

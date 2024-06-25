@@ -3,20 +3,21 @@ input = sys.stdin.readline
 
 string = input().rstrip()
 
-extracted_list = []
-def equilibrium(a,start, end): # a 는 ()[] 가 들어있는 리스트이다.
-    if a == 
-
-
-
-
-
+extracted = [0,0] #12번째줄때메 0,0그냥넣엇음아무의미없음
 
 while string != ".":
-    for i in range(len(string)):
-        if i == "(" or ")" or "[" or "]":
-            extracted_list.append[i]
-    for i in range(extracted_list):
-        
+    for i in string:
+        if i == "(" or i == ")" or i == "[" or i == "]":
+            extracted.append(i)
 
-        #처음이  ( 면 )가 오기 전까지 [, ], ( 만 가능하다.
+        if extracted[-1]== ")" and extracted[-2]=="(":
+            extracted.pop()
+            extracted.pop()
+        if extracted[-1]== "]" and extracted[-2]=="[":
+            extracted.pop()
+            extracted.pop()
+    if extracted == [0,0]:
+        print("yes")
+    else:
+        print("no")
+    string = input().rstrip()
