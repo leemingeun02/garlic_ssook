@@ -1,3 +1,6 @@
-extracted = [0,0] #12번째줄때메 0,0그냥넣엇음아무의미없음
+i = []
 
-print(extracted)
+string = "1212"
+
+i.append(string[0:])
+print(i)
