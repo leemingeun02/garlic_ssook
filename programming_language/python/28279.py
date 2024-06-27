@@ -1,11 +1,12 @@
 import sys
+from collections import deque
 
 N = int(input())
-deque = dict()
+deque1 = deque()
 for i in range(N):
     command = list(input().split())
     if len(command) == 2:
-        if deque[0] == "1":
+        if deque1[0] == "1":
             deque[0] = command[1]
         else:
             deque[len(deque)] =command[1]
