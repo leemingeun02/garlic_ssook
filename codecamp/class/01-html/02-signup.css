@@ -1,0 +1,106 @@
+.{
+    box-sizing: border-box;
+    margin:0px;
+}
+.background{
+    width: 1920px;
+    height: 1080px;
+    background-color: white;
+    display:flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
+    padding:0px;
+
+}
+
+.wrapper{
+    width: 670px;
+    height: 960px;
+    box-shadow: 7px 7px 39px 0px rgba(0, 104, 255, 0.25);
+    display:flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
+    border-radius: 20px;
+    padding: 0px;
+}
+.title{
+    width: 466px;
+    height:94px;
+    display:flex;
+    flex-direction: column;
+    justify-content: start;
+    color: rgba(0, 104, 255, 1);
+}
+
+.group5{
+    width: 470px;
+    height:818px;
+    padding:90px;
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
+}
+.group4{
+    width: 466px;
+    height:80px;
+    border-radius: 10px;
+    border: 1px solid #D2D2D2;
+
+}
+.group3{
+    width: 466px;
+    height:80px;
+    border: 1px solid #D2D2D2;
+    border-radius: 10px;
+}
+.group2{
+    width: 466px;
+    height:80px;
+    border: 1px solid #D2D2D2;
+    border-radius: 10px;
+}
+.group1{
+    width: 466px;
+    height:80px;
+    border: 1px solid #D2D2D2;
+    border-radius: 10px;
+}
+.gender{
+    width: 140px;
+    height: 23.94px;
+    display: flex;
+    flex-direction: row;
+    justify-content:center;
+    align-items: center;
+}
+
+.selection{
+    width: 466px;
+    height:80px;
+    border: 1px solid #D2D2D2;
+    border-radius: 10px;
+}
+
+.submitButton{
+    width: 466px;
+    height:80px;
+    border-radius: 10px;
+    border: 1px solid rgba(0, 104, 255, 1);
+    background-color: white;
+}
+
+.areee{
+    flex-direction:row;
+    width: 20px;
+    height:20px;
+    display: inline;
+}
+
+.agreeText{
+    width: 419px;
+    height:21px;
+    font-size: 14px;
+}
