@@ -7,7 +7,7 @@ line += [N] + [0]*N
 
 def problem_sort(list):
     i = 1
-    result = "nice"
+    result = "Nice"
     while i <=N:
         if list[0] != i:
             if stack[-1] == i:
@@ -17,7 +17,7 @@ def problem_sort(list):
                 stack.append(list[0])
                 del list[0]
             else:
-                return "sad"
+                return "Sad"
         else:
             del list[0]
             i+= 1

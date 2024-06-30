@@ -20,4 +20,5 @@ while string != ".":
         print("yes")
     else:
         print("no")
+    extracted = [0,0]
     string = input().rstrip()
