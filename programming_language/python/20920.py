@@ -50,3 +50,4 @@ for k1 in sorted(ordered_dict, reverse=True):
     for k2 in sorted(ordered_dict[k1], reverse=True):
         for word in sorted(ordered_dict[k1][k2]):
             print(word)
+            print(word)
