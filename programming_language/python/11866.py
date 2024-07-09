@@ -1,10 +1,21 @@
-N, K =map(int, input().split())
-global people = [1] * N
-people[0] = 0
+from collections import deque
 
-global turn = 0
-def yosepus(N,K):
-    print(people[turn])
-    people[turn] = 0
-    if True:
-        yosepus(N,K)
+yosepus = deque()
+N, M = map(int, input().split())
+
+yosepus = deque(range(1,N+1))
+
+
+counter = 1
+print("<",end="")
+while yosepus:
+    if counter % M == 0:
+        counter = 1
+        print(yosepus.popleft(),end="")
+        if yosepus:
+            print(", ",end="")
+    else:
+        yosepus.append(yosepus.popleft())
+        counter += 1
+
+print(">", end="")
