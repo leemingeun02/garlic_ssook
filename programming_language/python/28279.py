@@ -8,20 +8,18 @@ deque1 = deque()
 for i in range(N):
     command = list(input().split())
     if len(command) == 2:
-        if deque1 and command[0] == "1":
-            deque1[0] = command[1]
-        elif command[0] == "1" and command[]:
-            deque1.insert(0, command[1])
+        if command[0] == "1": # 1 x 인 경우
+            deque1.appendleft(command[1])
+        else: # 2 x 인 경우
+            deque1.append(command[1])
     elif command[0] == "3":
         if deque1:
-            print(deque1[0])
-            del deque1[0]
+            print(deque1.popleft())
         else:
             print(-1)
     elif command[0]=="4":
         if deque1:
-            print(deque1[len(deque1)-1])
-            del deque1[len(deque1)-1]
+            print(deque1.pop())
         else:
             print(-1)
     elif command[0]=="5":
@@ -37,7 +35,7 @@ for i in range(N):
         else:
             print(-1)
     elif command[0]=="8":
-        if deque:
-            print(deque[len(deque)-1])
+        if deque1:
+            print(deque1[-1])
         else:
             print(-1)

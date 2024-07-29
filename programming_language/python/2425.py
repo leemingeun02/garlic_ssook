@@ -11,4 +11,5 @@ circle = deque(range(1, N+1))
 print(numbers)
 
 for i in range(N):
-    print(circle.popleft()))
+    print(circle.popleft())
+    print
