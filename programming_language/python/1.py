@@ -99,6 +99,26 @@ reviews_count = get_text_or_default(By.CSS_SELECTOR, 'button.block.text-sm.font-
 # 단골 수 추출
 loyal_customers_count = get_text_by_xpath_or_default('//span[text()="단골"]/following-sibling::button[@disabled]', '0')
 
+#이미지 추출
+def get_image_urls():
+        image_urls = set()
+        max_images = 10
+        wait = WebDriverWait(driver, 5)
+        while len(image_urls) < max_images:
+            try:
+                image_url = wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, 'div.swiper-slide-active img'))).get_attribute('src')
+                if image_url:
+                    image_urls.add(image_url)
+                
+                if len(image_urls) < max_images:
+                    next_button = wait.until(EC.element_to_be_clickable((By.ID, 'product-gallery-slider-next')))
+                    driver.execute_script("arguments[0].click();", next_button)
+            except Exception as e:
+                print(f"Error getting image URLs: {e}")
+                break
+        return list(image_urls)
+
+urls = get_image_urls()
 # 추출한 정보 출력
 print(f"제목: {title}")
 print(f"가격: {price}")
@@ -117,6 +137,7 @@ print(f"신뢰지수: {trust_score}")
 print(f"안전 거래 횟수: {safe_transaction_count}")
 print(f"거래 후기 수: {reviews_count}")
 print(f"단골 수: {loyal_customers_count}")
+print(urls)
 
 # 웹 드라이버 종료
 driver.quit()

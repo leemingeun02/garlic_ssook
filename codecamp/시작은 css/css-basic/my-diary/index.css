@@ -1,0 +1,30 @@
+.container{
+    background-color: yellow;
+}
+
+.wrapper{
+    border: 1px solid gray;
+    box-sizing: border-box;
+    height: 450px;
+    width: 600px;
+    border-radius: 10px;
+    flex-direction: column;
+}
+
+.wrapper__head{
+}
+
+.wrapper__head__title{
+    color: white;
+    background-color: orange;
+}
+
+.wrapper__head__sub-title{
+
+}
+.wrapper__body{
+
+}
+.wrapper__body__content{
+
+}
