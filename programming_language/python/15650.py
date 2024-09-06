@@ -3,8 +3,8 @@ N, M = map(int, input().split())
 
 def backtracking(n,m, string=""):
     if len(string) == m:
-        sorted_string = str((list(string)).sort())
-        if sorted_string == string:
+        sorted_string = "".join(sorted(list(string)))
+        if str(sorted_string) == string:
             print(*list(string), sep=" ")
         return
     for i in range(1, n+1):
