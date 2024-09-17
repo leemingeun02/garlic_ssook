@@ -10,7 +10,7 @@ import numpy as np
 from tkinter import Tk, Label
 import threading
 import sys
-import winsound  # 소리 재생을 위한 모듈 추가
+import winsound
 
 # 전역 종료 이벤트
 exit_event = threading.Event()
