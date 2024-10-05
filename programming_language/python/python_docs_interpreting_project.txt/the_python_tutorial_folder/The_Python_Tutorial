@@ -1,0 +1,172 @@
+파이썬은 배우기 쉽고, 강력한 프로그래밍 언어입니다.
+효율적인 고차원의 데이터 구조와 쉽지만 효과적인 객체 지향 프로그래밍으로의 접근을 가지고 있습니다.
+파이썬의 우아한 신택스와 dynamic typing, 해석된 자연과 함께, 파이썬은 스크립트를 작성하는데 있어서,
+그리고 빠른 애플리케이션 개발에 있어서 많은 영역과 대부분의 플랫폼에서 이상적입니다.
+(##dynamic typing: 동적 타이핑. 코드를 작성하는 데 있어서 컴퓨터적 구조를 생략한다. 반대는 static typing으로, 정적 타이핑이라고 하며 컴퓨터적 구조를 명시해준다.)
+
+파이썬 인터프리터와 확장적인 표준 라이브러리는 파이썬 사이트에서 자유롭게 사용가능하며, 모든 주요 플랫폼의 소스나 바이너리 형태로 파이썬 웹사이트 에서 무료로 제공되며, 자유롭게 배포될 수 있습니다.
+
+같은 사이트에는 많은 무료 서드파티 Python 모듈, 프로그램 및 도구의 배포본과 링크, 그리고 추가 문서가 포함되어 있습니다.
+
+파이썬 인터프리터는 c 혹은 c++(혹은 c로부터 호출가능한 다른 언어들)로부터 implemented된 새로운 함수와 데이터 타입과 함께 쉽게 확장됩니다.
+
+파이썬은 커스터마이징 가능한 응용 프로그래밍을 위한 확장 언어로서도 적합합니다.
+
+이 튜토리얼은 파이썬 언어와 시스템의 기초적인 컨셉과 특징을 비격식적으로 소개합니다.
+이것은 파이썬 인터프리터가 유용하고 핸즈온 경험에 유용하도록 돕지만, 모든 예제가 독립적이므로 이 튜토리얼은 오프라인에서도 읽힐 수 있습니다.
+
+스텐다드 객체와 모듈의 설명을 알고싶다면 파이썬 표준 라이브러리를 보세요. 파이썬 언어 레퍼런스는 파이썬 언어에 대한 더 형식적인 정의를 제공합니다.
+c언어나 c++에서 파이썬을 확장하려면  Extending and Embedding the Python Interpreter and Python/C API Reference Manual을 읽으세요.
+
+파이썬을 깊이 있게 다루는 몇몇의 책들도 있습니다.
+
+이 튜토리얼은 모든 기능, 심지어 자주 사용되는 기능도 포괄적으로 다루지 않습니다.
+대신, 파이썬의 가장 주목할 만한 많은 특징들을 소개합니다. 그리고 이 튜토리얼은 이 언어에 대한 맛과 스타일에 대한 좋은 아이디어를 제공할 것입니다.
+
+튜토리얼을 읽고 나면, 당신은 파이썬의 모듈과 프로그램들을 읽고 쓸 줄 알게 되며, 파이썬 표준 라이브러리에 기재되어 있는 다양한 파이썬 라이브러리에 대해 더 깊이 배울 준비가 될 것입니다.
+
+용어집도 살펴볼 가치가 있습니다.
+
+1. Whetting Your Appetite
+2. Using the Python Interpreter
+2.1. Invoking the Interpreter
+2.1.1. Argument Passing
+2.1.2. Interactive Mode
+2.2. The Interpreter and Its Environment
+2.2.1. Source Code Encoding
+3. An Informal Introduction to Python
+3.1. Using Python as a Calculator
+3.1.1. Numbers
+3.1.2. Text
+3.1.3. Lists
+3.2. First Steps Towards Programming
+4. More Control Flow Tools
+4.1. if Statements
+4.2. for Statements
+4.3. The range() Function
+4.4. break and continue Statements
+4.5. else Clauses on Loops
+4.6. pass Statements
+4.7. match Statements
+4.8. Defining Functions
+4.9. More on Defining Functions
+4.9.1. Default Argument Values
+4.9.2. Keyword Arguments
+4.9.3. Special parameters
+4.9.3.1. Positional-or-Keyword Arguments
+4.9.3.2. Positional-Only Parameters
+4.9.3.3. Keyword-Only Arguments
+4.9.3.4. Function Examples
+4.9.3.5. Recap
+4.9.4. Arbitrary Argument Lists
+4.9.5. Unpacking Argument Lists
+4.9.6. Lambda Expressions
+4.9.7. Documentation Strings
+4.9.8. Function Annotations
+4.10. Intermezzo: Coding Style
+5. Data Structures
+5.1. More on Lists
+5.1.1. Using Lists as Stacks
+5.1.2. Using Lists as Queues
+5.1.3. List Comprehensions
+5.1.4. Nested List Comprehensions
+5.2. The del statement
+5.3. Tuples and Sequences
+5.4. Sets
+5.5. Dictionaries
+5.6. Looping Techniques
+5.7. More on Conditions
+5.8. Comparing Sequences and Other Types
+6. Modules
+6.1. More on Modules
+6.1.1. Executing modules as scripts
+6.1.2. The Module Search Path
+6.1.3. “Compiled” Python files
+6.2. Standard Modules
+6.3. The dir() Function
+6.4. Packages
+6.4.1. Importing * From a Package
+6.4.2. Intra-package References
+6.4.3. Packages in Multiple Directories
+7. Input and Output
+7.1. Fancier Output Formatting
+7.1.1. Formatted String Literals
+7.1.2. The String format() Method
+7.1.3. Manual String Formatting
+7.1.4. Old string formatting
+7.2. Reading and Writing Files
+7.2.1. Methods of File Objects
+7.2.2. Saving structured data with json
+8. Errors and Exceptions
+8.1. Syntax Errors
+8.2. Exceptions
+8.3. Handling Exceptions
+8.4. Raising Exceptions
+8.5. Exception Chaining
+8.6. User-defined Exceptions
+8.7. Defining Clean-up Actions
+8.8. Predefined Clean-up Actions
+8.9. Raising and Handling Multiple Unrelated Exceptions
+8.10. Enriching Exceptions with Notes
+9. Classes
+9.1. A Word About Names and Objects
+9.2. Python Scopes and Namespaces
+9.2.1. Scopes and Namespaces Example
+9.3. A First Look at Classes
+9.3.1. Class Definition Syntax
+9.3.2. Class Objects
+9.3.3. Instance Objects
+9.3.4. Method Objects
+9.3.5. Class and Instance Variables
+9.4. Random Remarks
+9.5. Inheritance
+9.5.1. Multiple Inheritance
+9.6. Private Variables
+9.7. Odds and Ends
+9.8. Iterators
+9.9. Generators
+9.10. Generator Expressions
+10. Brief Tour of the Standard Library
+10.1. Operating System Interface
+10.2. File Wildcards
+10.3. Command Line Arguments
+10.4. Error Output Redirection and Program Termination
+10.5. String Pattern Matching
+10.6. Mathematics
+10.7. Internet Access
+10.8. Dates and Times
+10.9. Data Compression
+10.10. Performance Measurement
+10.11. Quality Control
+10.12. Batteries Included
+11. Brief Tour of the Standard Library — Part II
+11.1. Output Formatting
+11.2. Templating
+11.3. Working with Binary Data Record Layouts
+11.4. Multi-threading
+11.5. Logging
+11.6. Weak References
+11.7. Tools for Working with Lists
+11.8. Decimal Floating-Point Arithmetic
+12. Virtual Environments and Packages
+12.1. Introduction
+12.2. Creating Virtual Environments
+12.3. Managing Packages with pip
+13. What Now?
+14. Interactive Input Editing and History Substitution
+14.1. Tab Completion and History Editing
+14.2. Alternatives to the Interactive Interpreter
+15. Floating-Point Arithmetic: Issues and Limitations
+15.1. Representation Error
+16. Appendix
+16.1. Interactive Mode
+16.1.1. Error Handling
+16.1.2. Executable Python Scripts
+16.1.3. The Interactive Startup File
+16.1.4. The Customization Modules
+
+
+
+
+
+

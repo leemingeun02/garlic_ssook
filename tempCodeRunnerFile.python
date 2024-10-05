@@ -1,0 +1,4 @@
+import webbrowser
+
+# 특정 URL 열기
+webbrowser.open("https://letter.worldvision.or.kr/index.do")
